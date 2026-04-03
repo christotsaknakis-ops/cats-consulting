@@ -1,249 +1,99 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATS Consulting</title>
+    <title>CATS Consulting | Cyber Analytical & Tactical Solutions</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        html { scroll-behavior: smooth; }
+        body { background-color: #374151; color: #C0C0C0; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; line-height: 1.8; }
+        header { padding: 60px 20px; text-align: center; border-bottom: 2px solid #C0C0C0; }
+        .logo { max-width: 240px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.2)); }
+        
+        nav { display: flex; justify-content: center; gap: 40px; padding: 20px; background: #1f2937; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        nav a { color: #C0C0C0; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: #ffffff; text-shadow: 0 0 10px #ffffff; }
 
-        body {
-            background-color: #374151;
-            color: #C0C0C0;
-            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #2d3540;
-            padding: 1rem 2rem;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            color: #C0C0C0;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #C0C0C0;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.7;
-        }
-
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #2d3540;
-            border-radius: 4px;
-            padding: 0.5rem;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            z-index: 100;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #2d3540;
-            border-radius: 4px;
-            padding: 0.5rem;
-            min-width: 200px;
-        }
-
-        .dropdown-menu li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-image: url('https://images.unsplash.com/photo-1558493627-e6e0d2c8b6f3?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(55, 65, 81, 0.7);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .slogan {
-            font-size: 3rem;
-            color: #C0C0C0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 3rem;
-            background-color: #2d3540;
-            border-radius: 8px;
-        }
-
-        .contact-section h2 {
-            color: #C0C0C0;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #C0C0C0;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: #374151;
-            border: 2px solid #C0C0C0;
-            color: #C0C0C0;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            box-shadow: 0 0 8px rgba(192, 192, 192, 0.3);
-        }
-
-        .pgp-info {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background-color: #2d3540;
-            border-left: 4px solid #C0C0C0;
-        }
-
-        .submit-btn {
-            background-color: #C0C0C0;
-            color: #374151;
-            padding: 1rem 2rem;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.8;
-        }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        section { padding: 100px 0; border-bottom: 1px solid #4b5563; }
+        
+        h2 { color: #ffffff; text-transform: uppercase; letter-spacing: 4px; border-left: 6px solid #C0C0C0; padding-left: 25px; margin-bottom: 50px; font-size: 2.2rem; }
+        h3 { color: #ffffff; text-transform: uppercase; margin-top: 50px; border-bottom: 1px solid #C0C0C0; display: inline-block; padding-right: 40px; letter-spacing: 2px; }
+        
+        .service-description { margin-top: 25px; text-align: justify; }
+        .sub-point { margin-bottom: 30px; }
+        strong { color: #ffffff; font-weight: 600; }
+        
+        .footer-note { font-size: 0.85rem; text-align: center; padding: 60px; color: #94a3b8; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">⚙️ CATS Consulting</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li class="dropdown">
-                        <span>Expertise ▾</span>
-                        <div class="dropdown-menu">
-                            <ul>
-                                <li><a href="#intelligence">Intelligence</a></li>
-                                <li><a href="#audits">Audits</a></li>
-                                <li><a href="#response">Response</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="#contact">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="slogan">Ein harmloser Mann ist nicht friedlich, er ist harmlos.</h1>
+<header>
+    <img src="logo.png" alt="CATS Consulting Logo" class="logo">
+    <h1 style="letter-spacing: 3px; margin: 0;">Cyber Analytical & Tactical Solutions</h1>
+</header>
+
+<nav>
+    <a href="#expertise">Expertise</a>
+    <a href="#philosophie">Philosophie</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<div class="container">
+
+    <!-- HAUPTSEKTION: EXPERTISE -->
+    <section id="expertise">
+        <h2>Unsere Expertise</h2>
+        <p style="font-style: italic; font-size: 1.2rem; color: #a0aec0; margin-bottom: 60px;">Ganzheitliche Cyber-Absicherung durch analytische Tiefe und taktische Präzision.</p>
+
+        <!-- 01. Intelligence -->
+        <div class="sub-point">
+            <h3>01. Intelligence</h3>
+            <div class="service-description">
+                <p><strong>Predictive Analysis:</strong> Effektive Cyber-Abwehr beginnt weit vor dem ersten Payload-Einschlag. Wir korrelieren globale Datenströme und identifizieren Angriffsmuster durch Machine Learning und menschliche Expertise. Statt nur auf Signaturen zu reagieren, antizipieren wir Taktiken bekannter Akteure, um Ihre Systeme strategisch zu härten, bevor eine Bedrohung real wird.</p>
+                <p><strong>Surface Monitoring:</strong> Die digitale Angriffsfläche endet nicht an der Firewall. Unsere Analysten überwachen kontinuierlich Ihre gesamte Präsenz – von Schatten-IT bis hin zu Leaks im Dark Web. Wir identifizieren kompromittierte Daten und geplante Kampagnen in Echtzeit, um das Zeitfenster für Angreifer radikal zu schließen.</p>
+            </div>
+        </div>
+
+        <!-- 02. Audits -->
+        <div class="sub-point">
+            <h3>02. Audits</h3>
+            <div class="service-description">
+                <p><strong>Infrastructure & Red Teaming:</strong> Ein Audit ist bei uns keine bloße Checkliste. Wir führen tiefgehende Analysen Ihrer Netzwerkarchitektur durch und simulieren reale Angriffsszenarien. Dabei decken wir Fehlkonfigurationen und logische Schwachstellen auf, die automatisierte Scanner übersehen würden, um Ihre technische Abwehrbasis kompromisslos zu festigen.</p>
+                <p><strong>Compliance & Human Factor:</strong> Wir validieren Ihre Konformität zu Standards wie ISO 27001 oder NIS-2, gehen aber einen Schritt weiter: Durch Social-Engineering-Prüfungen und Awareness-Analysen bewerten wir den "Human Factor". Wir stellen sicher, dass Ihre Sicherheitsrichtlinien nicht nur auf dem Papier existieren, sondern in der Praxis gelebt werden.</p>
+            </div>
+        </div>
+
+        <!-- 03. Reports -->
+        <div class="sub-point">
+            <h3>03. Reports</h3>
+            <div class="service-description">
+                <p><strong>Tactical & Strategic Reporting:</strong> Daten ohne Kontext sind wertlos. CATS liefert maßgeschneiderte Berichte für jede Ebene: Hochtechnische Indicators of Compromise (IoCs) für Ihre IT-Teams und strategische Risikobewertungen für die Geschäftsführung. Unsere Reports übersetzen technische Bedrohungslagen in eine klare, belastbare Entscheidungsgrundlage.</p>
+                <p><strong>Strategic Advisory:</strong> Unsere Berichte enden nicht bei der Bestandsaufnahme. Wir liefern konkrete Handlungsempfehlungen und unterstützen Sie dabei, Ihre Cyber-Strategie an die geopolitische Lage und branchenspezifische Risiken anzupassen. So wird IT-Sicherheit von einem Kostenfaktor zu einem steuerbaren, strategischen Wettbewerbsvorteil.</p>
+            </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
+    <!-- SEKTION: PHILOSOPHIE -->
+    <section id="philosophie">
+        <h2>Philosophie</h2>
+        <p style="font-size: 1.1rem; text-align: justify;">
+            Unsere Arbeit basiert auf Diskretion, Präzision und taktischer Exzellenz. In einer Welt hochvernetzter Bedrohungen betrachten wir Cyber-Sicherheit nicht als isolierte IT-Aufgabe, sondern als Kernvoraussetzung für Ihre operative Kontinuität und strategische Integrität. CATS Consulting steht für Lösungen, die analytisch fundiert und taktisch umsetzbar sind.
+        </p>
+    </section>
+
+    <!-- SEKTION: KONTAKT -->
+    <section id="kontakt" style="border-bottom: none;">
         <h2>Kontakt</h2>
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Betreff:</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <button type="submit" class="submit-btn">Absenden</button>
-        </form>
-
-        <div class="pgp-info">
-            <h3>PGP-Verschlüsselung</h3>
-            <p><strong>Fingerprint:</strong> 0x4A7B9C2D1E8F6A5B</p>
-            <p><strong>Email:</strong> kontakt@cats-consulting.de</p>
-        </div>
+        <p>Anfragen für <strong>cats-consulting.eu</strong> über gesicherte Kommunikationskanäle oder direkt über unser Security-Board am HP-Z4 Node.</p>
+        <p style="margin-top: 20px;">Standort: Cyber Defense Cluster | Region Nord</p>
     </section>
+
+    <div class="footer-note">
+        &copy; 2026 CATS Consulting. Alle Rechte vorbehalten. | Secure Deployment on HP-Z4 Infrastructure.
+    </div>
+</div>
+
 </body>
 </html>
