@@ -3,75 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.A.T.S. Consulting</title>
+    <title>C.A.T.S. Consulting | Cyber Analytics & Tactical Solutions</title>
+    <script src="https://tailwindcss.com"></script>
     <style>
-        body, html { 
-            margin: 0; padding: 0; 
-            background-color: #2d3436; /* Mattes Sturmgrau */
-            color: #ecf0f1; 
-            font-family: 'Inter', sans-serif; 
-            height: 100vh; display: flex; align-items: center; justify-content: center;
-        }
-        .main-container { text-align: center; width: 100%; max-width: 600px; }
-        
-        /* Silber-Effekt Definitionen */
-        .silver-stroke { stroke: url(#brushedSilver); stroke-width: 2; fill: none; }
-        .silver-fill { fill: url(#brushedSilver); }
-        
-        .philosophy {
-            margin-top: -20px;
-            font-size: 1.4rem;
-            font-style: italic;
-            color: #bdc3c7;
-            opacity: 0.9;
-            padding: 20px;
-            border-top: 1px solid rgba(189, 195, 199, 0.1);
-        }
+        @import url('https://googleapis.com');
+        body { background-color: #2d3436; color: #ecf0f1; font-family: 'Inter', sans-serif; }
+        .silver-gradient { background: linear-gradient(45deg, #bdc3c7 0%, #ffffff 50%, #bdc3c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+        .card:hover { border-color: #bdc3c7; transform: translateY(-5px); }
     </style>
 </head>
 <body>
-<div class="main-container">
-    <svg viewBox="0 0 500 600" xmlns="http://w3.org">
-        <defs>
-            <linearGradient id="brushedSilver" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#bdc3c7" />
-                <stop offset="50%" style="stop-color:#ffffff" />
-                <stop offset="100%" style="stop-color:#bdc3c7" />
-            </linearGradient>
-            <linearGradient id="reflectionFade" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#bdc3c7; stop-opacity:0.3" />
-                <stop offset="100%" style="stop-color:#bdc3c7; stop-opacity:0" />
-            </linearGradient>
-        </defs>
-
-        <!-- Leiterbahnen & Pins (Basierend auf PDF) -->
-        <g class="silver-stroke">
-            <!-- Top Pins (Asymmetrisch) -->
-            <path d="M250 120 V30 M230 130 V60 M270 130 V60 M210 145 V90 M290 145 V90" />
-            <circle cx="250" cy="30" r="3" class="silver-fill" />
-            <circle cx="230" cy="60" r="3" class="silver-fill" />
-            <circle cx="270" cy="60" r="3" class="silver-fill" />
-            
-            <!-- Side Pins (Links/Rechts) -->
-            <path d="M150 250 H40 M150 220 H65 M150 280 H65 M160 190 H90 M160 310 H90" />
-            <path d="M350 250 H460 M350 220 H435 M350 280 H435 M340 190 H410 M340 310 H410" />
-        </g>
-
-        <!-- Der Chip-Körper -->
-        <rect x="155" y="155" width="190" height="190" rx="28" fill="#4a5568" stroke="url(#brushedSilver)" stroke-width="6" />
-        <rect x="175" y="175" width="150" height="150" rx="18" class="silver-fill" />
-        
-        <!-- Schriftzug C.A.T.S -->
-        <text x="250" y="262" text-anchor="middle" font-weight="900" font-size="42" fill="#2d3436">C.A.T.S</text>
-
-        <!-- Bodenspiegelung (Reflexion) -->
-        <g transform="translate(0, 560) scale(1, -0.5)">
-            <rect x="155" y="0" width="190" height="150" rx="28" fill="url(#reflectionFade)" />
-            <path d="M250 0 V100" stroke="url(#reflectionFade)" stroke-width="2" fill="none" />
-        </g>
-    </svg>
-
-    <p class="philosophy">&bdquo;Ein harmloser Mann ist nicht friedlich, er ist harmlos.&ldquo;</p>
-</div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#2d3436]/80 backdrop-blur-md border-b border-white/10 px-8 py-4 flex justify-between items-center">
+        <div class="font-black text-xl tracking-tighter silver-gradient">C.A.T.S.</div>
+        <div class="space-x-8 text-sm uppercase tracking-widest opacity-70">
+            <a href="#services" class="hover:opacity-100 transition">Services</a>
+            <a href="#audit" class="hover:opacity-100 transition">Audits</a>
+            <a href="#contact" class="hover:opacity-100 transition">Kontakt</a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col items-center justify-center text-center px-4 bg-[url('https://unsplash.com')] bg-cover bg-center bg-blend-overlay bg-[#2d3436]/90">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 silver-gradient">TACTICAL CYBER SOLUTIONS.</h1>
+            <p class="text-xl md:text-2xl font-light opacity-80 mb-10 italic">
+                &bdquo;Ein harmloser Mann ist nicht friedlich, er ist harmlos.&ldquo;
+            </p>
+            <a href="#contact" class="px-8 py-4 border border-white/20 hover:bg-white hover:text-black transition uppercase tracking-widest text-sm font-bold">Inquiry Portfolio</a>
+        </div>
+    </section>
+    <!-- Services Grid -->
+    <section id="services" class="py-24 px-8 max-w-7xl mx-auto">
+        <h2 class="text-xs uppercase tracking-[0.3em] opacity-50 mb-12 text-center">Kernkompetenzen</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card p-10">
+                <div class="h-1 w-12 bg-white/20 mb-8"></div>
+                <h3 class="text-xl font-bold mb-4">Cyber Analytics</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Präventive Identifikation von Bedrohungsmustern durch KI-gestützte Datenanalyse und Echtzeit-Monitoring Ihrer Infrastruktur.</p>
+            </div>
+            <div class="card p-10">
+                <div class="h-1 w-12 bg-white/20 mb-8"></div>
+                <h3 class="text-xl font-bold mb-4">Audit Reports</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Detaillierte Sicherheitsüberprüfungen nach internationalen Standards. Wir liefern belastbare Reports für Ihr Risikomanagement.</p>
+            </div>
+            <div class="card p-10">
+                <div class="h-1 w-12 bg-white/20 mb-8"></div>
+                <h3 class="text-xl font-bold mb-4">Darknet Security</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Aufspüren von Datenlecks und kompromittierten Zugangsdaten im Deep- & Darkweb, bevor diese gegen Sie verwendet werden.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-white/5 text-center">
+        <h2 class="text-3xl font-light mb-8">Bereit für eine taktische Analyse?</h2>
+        <a href="mailto:ceo@cats-consulting.eu" class="text-2xl md:text-4xl font-bold silver-gradient underline decoration-white/20 underline-offset-8">ceo@cats-consulting.eu</a>
+    </section>
+    <!-- Footer -->
+    <footer class="py-12 px-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest opacity-40">
+        <p>&copy; 2026 C.A.T.S. Tactical Solutions</p>
+        <p>Strategic Intelligence & Cyber Defense</p>
+    </footer>
 </body>
 </html>
