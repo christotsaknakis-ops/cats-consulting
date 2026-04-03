@@ -3,94 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.A.T.S. STRATEGIC INTELLIGENCE</title>
+    <title>C.A.T.S. Consulting | Cyber Analytics & Tactical Solutions</title>
     <script src="https://tailwindcss.com"></script>
     <style>
         @import url('https://googleapis.com');
-        :root { --slate: #1a1c1d; --silver: #bdc3c7; }
-        body { background-color: var(--slate); color: #fff; font-family: 'Space+Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
-        .hero-gradient { background: linear-gradient(180deg, rgba(26,28,29,0) 0%, rgba(26,28,29,1) 100%); }
-        .silver-accent { color: var(--silver); letter-spacing: 0.2em; font-size: 0.75rem; text-transform: uppercase; }
-        .glass-panel { background: rgba(255, 255, 255, 0.02); border-left: 1px solid rgba(255, 255, 255, 0.1); }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #333; margin: 0; }
+        
+        /* Dropdown Logik */
+        .nav-item:hover .dropdown { display: block; opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown { 
+            display: none; position: absolute; top: 100%; left: 0; background: white; 
+            min-width: 280px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-top: 2px solid #2d3436;
+            transition: all 0.3s ease; z-index: 1000;
+        }
+        .dropdown-link { padding: 15px 25px; display: block; border-bottom: 1px solid #f0f0f0; font-size: 13px; color: #666; text-decoration: none; }
+        .dropdown-link:hover { background: #f8f9fa; color: #2d3436; padding-left: 30px; }
+
+        .hero-banner { 
+            height: 500px; 
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://unsplash.com'); 
+            background-size: cover; 
+            background-position: center; 
+        }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <!-- Header Navigation -->
-    <nav class="fixed w-full z-[100] px-10 py-8 flex justify-between items-center border-b border-white/5 backdrop-blur-xl">
-        <div class="flex items-center space-x-4">
-            <span class="font-bold tracking-[0.4em] text-lg silver-accent">C.A.T.S</span>
-            <span class="h-4 w-[1px] bg-white/20"></span>
-            <span class="text-[10px] tracking-widest opacity-40 uppercase">Global Tactical Solutions</span>
+    <!-- Top Bar (Kontakt & Sprache) -->
+    <div class="bg-[#2d3436] text-white text-[10px] py-2 px-12 flex justify-between uppercase tracking-[0.2em] font-medium">
+        <div>ceo@cats-consulting.eu | Intelligence & Defense</div>
+        <div class="flex gap-6">
+            <span class="cursor-pointer">DE</span>
+            <span class="opacity-40 cursor-pointer">EN</span>
         </div>
-        <div class="hidden md:flex space-x-12 silver-accent opacity-60">
-            <a href="#intelligence" class="hover:opacity-100 transition">Intelligence</a>
-            <a href="#solutions" class="hover:opacity-100 transition">Solutions</a>
-            <a href="#contact" class="hover:opacity-100 transition">Engagement</a>
+    </div>
+
+    <!-- Main Navigation (Hypno-Style Struktur) -->
+    <nav class="bg-white py-8 px-12 flex justify-between items-center relative shadow-sm">
+        <div class="flex items-center gap-3">
+             <!-- Kleiner technischer Akzent vor dem Logo -->
+             <div class="w-8 h-8 bg-[#2d3436] rounded-sm flex items-center justify-center text-[10px] text-white font-bold">C</div>
+             <span class="text-2xl font-extrabold tracking-tighter text-[#2d3436]">C.A.T.S. <span class="font-light text-gray-400">CONSULTING</span></span>
+        </div>
+        
+        <div class="hidden lg:flex gap-10 text-[12px] font-bold uppercase tracking-widest text-gray-500">
+            <a href="#" class="hover:text-black transition-colors">Willkommen</a>
+            
+            <div class="nav-item relative cursor-pointer hover:text-black flex items-center gap-1">
+                Anwendungsgebiete <span class="text-[8px]">▼</span>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link">📊 Cyber Analytics & Intelligence</a>
+                    <a href="#" class="dropdown-link">🕵️ Darknet Monitoring & Leaks</a>
+                    <a href="#" class="dropdown-link">🛡️ Tactical Security Solutions</a>
+                    <a href="#" class="dropdown-link">📝 Strategic Audit Reports</a>
+                </div>
+            </div>
+
+            <a href="#" class="hover:text-black transition-colors">Methode</a>
+            <a href="#" class="hover:text-black transition-colors">Über uns</a>
+            <a href="#" class="hover:text-black transition-colors">Kontakt</a>
+            
+            <div class="ml-4 cursor-pointer hover:scale-110 transition-transform">🔍</div>
         </div>
     </nav>
 
-    <!-- Main Hero -->
-    <section class="relative h-screen w-full flex items-end pb-32 px-10 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://unsplash.com" class="w-full h-full object-cover opacity-40 grayscale" alt="Global Defense Network">
-            <div class="absolute inset-0 hero-gradient"></div>
-        </div>
-        <div class="relative z-10 max-w-6xl">
-            <p class="silver-accent mb-4">Tactical Cyber Defense Framework</p>
-            <h1 class="text-6xl md:text-[7rem] font-light leading-[0.9] tracking-tighter mb-10">
-                AHEAD OF <span class="font-bold">THE THREAT.</span>
-            </h1>
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <p class="text-xl text-white/50 leading-relaxed font-light">
-                    Wir sichern die digitale Souveränität von Konzernen durch spezialisierte Cyber-Analytik und taktische Darknet-Aufklärung. Präzision in der Analyse, kompromisslos in der Lösung.
-                </p>
-                <div class="border-l border-white/10 pl-10">
-                    <span class="italic text-white/40 font-light text-lg italic block mb-4">&bdquo;Ein harmloser Mann ist nicht friedlich, er ist harmlos.&ldquo;</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Hero Banner (Großes atmosphärisches Bild) -->
+    <section class="hero-banner"></section>
 
-    <!-- Enterprise Solutions -->
-    <section id="solutions" class="py-40 px-10 border-t border-white/5">
-        <div class="grid lg:grid-cols-3 gap-1">
-            <div class="glass-panel p-16">
-                <span class="silver-accent block mb-10">01 / Cyber Analytics</span>
-                <h3 class="text-3xl font-bold mb-6">Strategic Forensic Analysis</h3>
-                <p class="text-white/40 leading-relaxed mb-8">Echtzeit-Analyse komplexer Datenströme zur Identifikation von staatlichen und industriellen Angriffsmustern.</p>
-            </div>
-            <div class="glass-panel p-16">
-                <span class="silver-accent block mb-10">02 / Tactical Defense</span>
-                <h3 class="text-3xl font-bold mb-6">Active Leak Prevention</h3>
-                <p class="text-white/40 leading-relaxed mb-8">Kontinuierliches Monitoring von Dark-Web-Auktionshäusern. Identifikation kompromittierter Assets vor der Exfiltration.</p>
-            </div>
-            <div class="glass-panel p-16">
-                <span class="silver-accent block mb-10">03 / Executive Audits</span>
-                <h3 class="text-3xl font-bold mb-6">Board-Level Reporting</h3>
-                <p class="text-white/40 leading-relaxed mb-8">Hochspezialisierte Audit-Berichte für das Top-Management zur strategischen Risiko-Minimierung und Compliance.</p>
-            </div>
+    <!-- Content Section (Zentriert wie im Beispiel) -->
+    <main class="max-w-5xl mx-auto py-24 px-8 text-center">
+        <div class="flex items-center justify-center gap-6 mb-12">
+            <div class="h-[1px] w-16 bg-gray-200"></div>
+            <h2 class="text-3xl font-light text-gray-800 tracking-[0.1em]">C.A.T.S. | Cyber Analytics & Tactical Solutions</h2>
+            <div class="h-[1px] w-16 bg-gray-200"></div>
         </div>
-    </section>
 
-    <!-- Contact / Engagement -->
-    <section id="contact" class="py-40 bg-white text-black px-10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start">
-            <div class="mb-20 md:mb-0">
-                <h2 class="text-5xl font-black tracking-tighter mb-4 uppercase">Direct Engagement.</h2>
-                <p class="text-black/60 text-xl">Sichere Kommunikation für diskrete Analysen.</p>
-            </div>
-            <div class="text-right">
-                <p class="silver-accent text-black/40 mb-2">Principal Consultant</p>
-                <a href="mailto:ceo@cats-consulting.eu" class="text-3xl md:text-5xl font-bold hover:opacity-70 transition">ceo@cats-consulting.eu</a>
-            </div>
+        <p class="text-2xl text-gray-700 leading-relaxed italic font-light max-w-3xl mx-auto mb-12">
+            &bdquo;Ein harmloser Mann ist nicht friedlich, er ist harmlos.&ldquo;
+        </p>
+        
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-loose font-light">
+            Strategische Analyse-Verfahren und taktische Sicherheits-Lösungen in Kombination mit 
+            Diskretion, Erfahrung und absoluter Präzision. Das ist die Philosophie von C.A.T.S.
+        </p>
+
+        <div class="mt-16">
+            <a href="mailto:ceo@cats-consulting.eu" class="inline-block px-10 py-4 bg-[#2d3436] text-white uppercase text-[11px] tracking-[0.3em] font-bold hover:bg-gray-800 transition-all shadow-lg">
+                Inquiry Security Portfolio
+            </a>
         </div>
-    </section>
+    </main>
 
-    <footer class="p-10 flex justify-between text-[10px] silver-accent opacity-30">
-        <p>&copy; 2026 C.A.T.S. Tactical Solutions — Strategic Cyber Intelligence Group</p>
-        <div class="space-x-4">
-            <span>Zurich</span> <span>Berlin</span> <span>London</span>
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-16 px-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 uppercase tracking-[0.3em]">
+        <p>&copy; 2026 C.A.T.S. Strategic Defense Intelligence</p>
+        <div class="flex gap-8 mt-6 md:mt-0">
+            <a href="#" class="hover:text-black">Impressum</a>
+            <a href="#" class="hover:text-black">Datenschutz</a>
         </div>
     </footer>
 
