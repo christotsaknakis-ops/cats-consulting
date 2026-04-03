@@ -11,6 +11,20 @@
         .text-silver { color: #c0c0c0; }
         .border-silver { border-color: #c0c0c0; }
         .silver-accent { color: #e3e3e3; }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-anim {
+            animation: pulse 2s infinite;
+        }
     </style>
 </head>
 <body class="dark bg-gray-800 text-white">
@@ -33,12 +47,12 @@
 
     <!-- Focus Areas -->
     <section class="container mx-auto px-8 py-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-4 border-l-4 border-silver">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-4 border-l-4 border-silver hover-lift">
             <h2 class="text-2xl font-semibold mb-4 silver-accent">Our Focus</h2>
-            <ul class="list-disc list-inside text-silver space-y-2">
-                <li><strong>Forensic Audits:</strong> Deep-dive analysis of digital assets and security protocols.</li>
-                <li><strong>Darknet Monitoring:</strong> Continuous surveillance for emerging threats.</li>
-                <li><strong>Incident Response:</strong> Rapid deployment teams for critical situations.</li>
+            <ul class="list-disc list-inside text-silver space-y-3">
+                <li><strong>Forensic Audits:</strong> Wir führen tiefgehende Analysen Ihrer digitalen Assets und Sicherheitsprotokolle durch. Unsere Experten untersuchen jede Schwachstelle mit der Präzision eines Detektivs, um sicherzustellen, dass Ihre kritischen Systeme nicht nur funktionieren, sondern auch widerstandsfähig gegen Bedrohungen sind.</li>
+                <li><strong>Darknet Monitoring:</strong> Kontinuierliche Überwachung und Analyse von Bedrohungen in Echtzeit. Wir beobachten die digitalen Schatten, wo sich Gefahren verstecken könnten, und warnen Sie proaktiv vor potenziellen Risiken, bevor sie zu Problemen werden.</li>
+                <li><strong>Incident Response:</strong> Unsere Rapid Deployment Teams stehen bereit für kritische Situationen. Bei Bedarf mobilisieren wir sofort unsere besten Experten, um Bedrohungen schnell zu identifizieren und zu neutralieren – denn in der Sicherheitsbranche zählt jede Minute.</li>
             </ul>
         </div>
     </section>
@@ -59,10 +73,23 @@
 
     <!-- Contact -->
     <section class="container mx-auto px-8 py-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-lg border-l-4 border-silver">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg border-l-4 border-silver hover-lift">
             <h2 class="text-2xl font-semibold mb-4 silver-accent">Contact</h2>
             <p class="text-silver">Email: ceo@catsconsulting.eu</p>
             <p class="mt-2 text-silver"><strong>PGP-Verschlüsselung:</strong> Available for secure communications.</p>
+        </div>
+    </section>
+
+    <!-- Unternehmensphilosophie -->
+    <section class="container mx-auto px-8 py-6">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-4 border-l-4 border-silver hover-lift">
+            <h2 class="text-2xl font-semibold mb-4 silver-accent">Unternehmensphilosophie</h2>
+            <blockquote class="italic text-center text-xl text-silver mb-4" style="font-style: italic;">
+                "Ein harmloser Mann ist nicht friedlich. Ein friedlicher Mann ist ein gefährlicher Mann, der sein Schwert in der Scheide lässt."<br><span class="text-sm">— Inspiriert durch J. Peterson</span>
+            </blockquote>
+            <p class="text-silver text-center">
+                Wahre Sicherheit entsteht nicht aus Zufall oder Glück, sondern aus Stärke und Disziplin. Wir glauben daran, dass eine robuste Sicherheitsstrategie auf einer soliden Grundlage von Vorbereitung und Wachsamkeit beruht. Unsere Mission ist es, Ihnen die Gewissheit zu geben, dass Ihre kritischen Assets geschützt sind – nicht nur heute, sondern auch morgen.
+            </p>
         </div>
     </section>
 
@@ -70,6 +97,15 @@
     <footer class="bg-storm-dark p-4 mt-8 border-t-4 border-silver">
         <p class="text-center text-silver">&copy; 2026 CATS CONSULTING. All rights reserved.</p>
     </footer>
+
+    <!-- Call to Action -->
+    <section class="container mx-auto px-8 py-6 mt-4">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg border-l-4 border-silver text-center">
+            <h2 class="text-2xl font-semibold mb-4 silver-accent">Sichern Sie Ihre Zukunft</h2>
+            <p class="text-silver mb-4">Lassen Sie uns gemeinsam die Bedrohungen identifizieren, bevor sie zu Problemen werden.</p>
+            <button class="pulse-anim bg-storm-dark text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-700 transition duration-300" style="font-weight: bold;">Jetzt kontaktieren</button>
+        </div>
+    </section>
 
 </body>
 </html>
