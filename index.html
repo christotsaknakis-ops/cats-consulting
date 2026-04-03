@@ -14,7 +14,7 @@ h1, h2, h3, nav a { font-family: "JetBrains Mono", monospace; letter-spacing: 1p
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } 
 .reveal.visible { opacity: 1; transform: translateY(0); }
         html { scroll-behavior: smooth; }
-        body { background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)), url("HomepageBackground.jpg") no-repeat center center fixed; background-size: cover; color: #C0C0C0; color: #C0C0C0; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; line-height: 1.8; }
+        body { background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)), url("HomepageBackground.jpg") no-repeat center center fixed; background-size: cover; color: #C0C0C0; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; line-height: 1.8; }
         header { padding: 60px 20px; text-align: center; border-bottom: 2px solid #000000; }
         .logo { max-width: 240px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.2)); }
         
@@ -32,6 +32,10 @@ h1, h2, h3, nav a { font-family: "JetBrains Mono", monospace; letter-spacing: 1p
         .sub-point { margin-bottom: 30px; }
         strong { color: #ffffff; font-weight: 600; }
         
+        /* Interaktive Sektionen mit Hover-Effekt */
+        .inter-section { padding: 100px 20px; transition: all 0.5s ease; border: 1px solid transparent; margin: 20px 0; border-radius: 4px; } 
+        .inter-section:hover { background: rgba(192, 192, 192, 0.03); border-color: rgba(192, 192, 192, 0.2); box-shadow: 0 0 40px rgba(0,0,0,0.4); } 
+        
         .footer-note { font-size: 0.85rem; text-align: center; padding: 60px; color: #94a3b8; letter-spacing: 1px; }
     </style>
 </head>
@@ -44,49 +48,52 @@ h1, h2, h3, nav a { font-family: "JetBrains Mono", monospace; letter-spacing: 1p
 
 <nav>
     <a href="#expertise">Expertise</a>
+    <a href="#intelligence">Intelligence</a>
+    <a href="#audits">Audits</a>
+    <a href="#reports">Reports</a>
     <a href="#philosophie">Philosophie</a>
     <a href="#kontakt">Kontakt</a>
 </nav>
 
 <div class="container">
 
-    <!-- HAUPTSEKTION: EXPERTISE -->
-<section id="expertise"> 
+<!-- HAUPTSEKTION: EXPERTISE -->
+<section id="expertise" class="inter-section"> 
     <h2>Unsere Expertise</h2> 
     <blockquote style="border-left: 2px solid #C0C0C0; padding-left: 20px; font-style: italic; margin: 30px 0; font-size: 1.2rem; color: #ffffff;"> 
         "Cybersicherheit ist viel mehr als nur eine Angelegenheit der IT." 
         <br><span style="font-size: 0.8rem; color: #a0aec0;">— Stéphane Nappo (*1973)</span> 
     </blockquote>
+</section>
 
-        <!-- 01. Intelligence -->
-        <div class="sub-point">
-            <h3>01. Intelligence</h3>
-            <div class="service-description">
-                <p><strong>Predictive Analysis:</strong> Effektive Cyber-Abwehr beginnt weit vor dem ersten Payload-Einschlag. Wir korrelieren globale Datenströme und identifizieren Angriffsmuster durch Machine Learning und menschliche Expertise. Statt nur auf Signaturen zu reagieren, antizipieren wir Taktiken bekannter Akteure, um Ihre Systeme strategisch zu härten, bevor eine Bedrohung real wird.</p>
-                <p><strong>Surface Monitoring:</strong> Die digitale Angriffsfläche endet nicht an der Firewall. Unsere Analysten überwachen kontinuierlich Ihre gesamte Präsenz – von Schatten-IT bis hin zu Leaks im Dark Web. Wir identifizieren kompromittierte Daten und geplante Kampagnen in Echtzeit, um das Zeitfenster für Angreifer radikal zu schließen.</p>
-            </div>
-        </div>
+<!-- SEKTION: INTELLIGENCE -->
+<section id="intelligence" class="inter-section">
+    <h2>Intelligence</h2> 
+    <div class="service-description">
+        <p><strong>Predictive Analysis:</strong> Effektive Cyber-Abwehr beginnt weit vor dem ersten Payload-Einschlag. Wir korrelieren globale Datenströme und identifizieren Angriffsmuster durch Machine Learning und menschliche Expertise. Statt nur auf Signaturen zu reagieren, antizipieren wir Taktiken bekannter Akteure, um Ihre Systeme strategisch zu härten, bevor eine Bedrohung real wird.</p>
+        <p><strong>Surface Monitoring:</strong> Die digitale Angriffsfläche endet nicht an der Firewall. Unsere Analysten überwachen kontinuierlich Ihre gesamte Präsenz – von Schatten-IT bis hin zu Leaks im Dark Web. Wir identifizieren kompromittierte Daten und geplante Kampagnen in Echtzeit, um das Zeitfenster für Angreifer radikal zu schließen.</p>
+    </div>
+</section>
 
-        <!-- 02. Audits -->
-        <div class="sub-point">
-            <h3>02. Audits</h3>
-            <div class="service-description">
-                <p><strong>Infrastructure & Red Teaming:</strong> Ein Audit ist bei uns keine bloße Checkliste. Wir führen tiefgehende Analysen Ihrer Netzwerkarchitektur durch und simulieren reale Angriffsszenarien. Dabei decken wir Fehlkonfigurationen und logische Schwachstellen auf, die automatisierte Scanner übersehen würden, um Ihre technische Abwehrbasis kompromisslos zu festigen.</p>
-                <p><strong>Compliance & Human Factor:</strong> Wir validieren Ihre Konformität zu Standards wie ISO 27001 oder NIS-2, gehen aber einen Schritt weiter: Durch Social-Engineering-Prüfungen und Awareness-Analysen bewerten wir den "Human Factor". Wir stellen sicher, dass Ihre Sicherheitsrichtlinien nicht nur auf dem Papier existieren, sondern in der Praxis gelebt werden.</p>
-            </div>
-        </div>
+<!-- SEKTION: AUDITS -->
+<section id="audits" class="inter-section">
+    <h2>Audits</h2> 
+    <div class="service-description">
+        <p><strong>Infrastructure & Red Teaming:</strong> Ein Audit ist bei uns keine bloße Checkliste. Wir führen tiefgehende Analysen Ihrer Netzwerkarchitektur durch und simulieren reale Angriffsszenarien. Dabei decken wir Fehlkonfigurationen und logische Schwachstellen auf, die automatisierte Scanner übersehen würden, um Ihre technische Abwehrbasis kompromisslos zu festigen.</p>
+        <p><strong>Compliance & Human Factor:</strong> Wir validieren Ihre Konformität zu Standards wie ISO 27001 oder NIS-2, gehen aber einen Schritt weiter: Durch Social-Engineering-Prüfungen und Awareness-Analysen bewerten wir den "Human Factor". Wir stellen sicher, dass Ihre Sicherheitsrichtlinien nicht nur auf dem Papier existieren, sondern in der Praxis gelebt werden.</p>
+    </div>
+</section>
 
-        <!-- 03. Reports -->
-        <div class="sub-point">
-            <h3>03. Reports</h3>
-            <div class="service-description">
-                <p><strong>Tactical & Strategic Reporting:</strong> Daten ohne Kontext sind wertlos. CATS liefert maßgeschneiderte Berichte für jede Ebene: Hochtechnische Indicators of Compromise (IoCs) für Ihre IT-Teams und strategische Risikobewertungen für die Geschäftsführung. Unsere Reports übersetzen technische Bedrohungslagen in eine klare, belastbare Entscheidungsgrundlage.</p>
-                <p><strong>Strategic Advisory:</strong> Unsere Berichte enden nicht bei der Bestandsaufnahme. Wir liefern konkrete Handlungsempfehlungen und unterstützen Sie dabei, Ihre Cyber-Strategie an die geopolitische Lage und branchenspezifische Risiken anzupassen. So wird IT-Sicherheit von einem Kostenfaktor zu einem steuerbaren, strategischen Wettbewerbsvorteil.</p>
-            </div>
-        </div>
-    </section>
+<!-- SEKTION: REPORTS -->
+<section id="reports" class="inter-section">
+    <h2>Reports</h2> 
+    <div class="service-description">
+        <p><strong>Tactical & Strategic Reporting:</strong> Daten ohne Kontext sind wertlos. CATS liefert maßgeschneiderte Berichte für jede Ebene: Hochtechnische Indicators of Compromise (IoCs) für Ihre IT-Teams und strategische Risikobewertungen für die Geschäftsführung. Unsere Reports übersetzen technische Bedrohungslagen in eine klare, belastbare Entscheidungsgrundlage.</p>
+        <p><strong>Strategic Advisory:</strong> Unsere Berichte enden nicht bei der Bestandsaufnahme. Wir liefern konkrete Handlungsempfehlungen und unterstützen Sie dabei, Ihre Cyber-Strategie an die geopolitische Lage und branchenspezifische Risiken anzupassen. So wird IT-Sicherheit von einem Kostenfaktor zu einem steuerbaren, strategischen Wettbewerbsvorteil.</p>
+    </div>
+</section>
 
-    <!-- SEKTION: PHILOSOPHIE -->
+<!-- SEKTION: PHILOSOPHIE -->
 <section id="philosophie"> 
     <h2>Philosophie</h2> 
     <blockquote style="border-left: none; font-style: italic; margin: 30px 0; font-size: 1.2rem; color: #ffffff;"> 
@@ -98,7 +105,7 @@ h1, h2, h3, nav a { font-family: "JetBrains Mono", monospace; letter-spacing: 1p
     </p> 
 </section>
 
-<!-- Ersetze die Kontakt-Sektion durch diesen Code -->
+<!-- SEKTION: KONTAKT -->
 <section id="kontakt" style="border-bottom: none; padding-bottom: 40px;">
     <h2>Kontakt</h2>
     <p>Für vertrauliche Anfragen und strategische Beratungen kontaktieren Sie uns direkt unter:</p>
