@@ -25,6 +25,21 @@
         .pulse-anim {
             animation: pulse 2s infinite;
         }
+        @keyframes glow-pulse {
+            0%, 100% { 
+                stroke-width: 3;
+                opacity: 0.6;
+                filter: drop-shadow(0 0 2px rgba(192, 192, 192, 0.5));
+            }
+            50% {
+                stroke-width: 4;
+                opacity: 1;
+                filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.8)) drop-shadow(0 0 4px rgba(65, 105, 135, 0.6));
+            }
+        }
+        .pulse-line {
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="dark bg-gray-800 text-white">
@@ -45,7 +60,7 @@
                 <!-- Chip-Form -->
                 <rect x="50" y="25" width="200" height="100" fill="#2c3e50" stroke="url(#metallic-silver)" stroke-width="3" rx="8"/>
                 
-                <!-- Leiterbahnen -->
+                <!-- Leiterbahnen mit Puls-Effekt -->
                 <g class="pulse-line">
                     <path d="M 60,75 L 120,75 M 140,75 L 200,75 M 220,75 L 280,75" stroke="url(#metallic-silver)" stroke-width="3" fill="none"/>
                     <path d="M 60,65 L 240,65 M 60,85 L 240,85" stroke="url(#metallic-silver)" stroke-width="2" fill="none"/>
@@ -74,7 +89,7 @@
             <ul class="list-disc list-inside text-silver space-y-3">
                 <li><strong>Forensic Audits:</strong> Wir führen tiefgehende Analysen Ihrer digitalen Assets und Sicherheitsprotokolle durch. Unsere Experten untersuchen jede Schwachstelle mit der Präzision eines Detektivs, um sicherzustellen, dass Ihre kritischen Systeme nicht nur funktionieren, sondern auch widerstandsfähig gegen Bedrohungen sind.</li>
                 <li><strong>Darknet Monitoring:</strong> Kontinuierliche Überwachung und Analyse von Bedrohungen in Echtzeit. Wir beobachten die digitalen Schatten, wo sich Gefahren verstecken könnten, und warnen Sie proaktiv vor potenziellen Risiken, bevor sie zu Problemen werden.</li>
-                <li><strong>Incident Response:</strong> Unsere Rapid Deployment Teams stehen bereit für kritische Situationen. Bei Bedarf mobilisieren wir sofort unsere besten Experten, um Bedrohungen schnell zu identifizieren und zu neutralieren – denn in der Sicherheitsbranche zählt jede Minute.</li>
+                <li><strong>Incident Response:</strong> Unsere Rapid Deployment Teams stehen bereit für kritische Situationen. Bei Bedarf mobilisieren wir sofort unsere besten Experten, um Bedrohungen schnell zu identifizieren und zu neutralisieren – denn in der Sicherheitsbranche zählt jede Minute.</li>
             </ul>
         </div>
     </section>
