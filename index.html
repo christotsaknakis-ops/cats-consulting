@@ -3,105 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.A.T.S. Consulting | Cyber Analytics & Tactical Solutions</title>
-    <script src="https://tailwindcss.com"></script>
+    <title>CATS Consulting</title>
     <style>
-        @import url('https://googleapis.com');
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #333; margin: 0; }
-        
-        /* Dropdown Logik */
-        .nav-item:hover .dropdown { display: block; opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown { 
-            display: none; position: absolute; top: 100%; left: 0; background: white; 
-            min-width: 280px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-top: 2px solid #2d3436;
-            transition: all 0.3s ease; z-index: 1000;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .dropdown-link { padding: 15px 25px; display: block; border-bottom: 1px solid #f0f0f0; font-size: 13px; color: #666; text-decoration: none; }
-        .dropdown-link:hover { background: #f8f9fa; color: #2d3436; padding-left: 30px; }
 
-        .hero-banner { 
-            height: 500px; 
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://unsplash.com'); 
-            background-size: cover; 
-            background-position: center; 
+        body {
+            background-color: #374151;
+            color: #C0C0C0;
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2d3540;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #C0C0C0;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #C0C0C0;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #2d3540;
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            z-index: 100;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #2d3540;
+            border-radius: 4px;
+            padding: 0.5rem;
+            min-width: 200px;
+        }
+
+        .dropdown-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1558493627-e6e0d2c8b6f3?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(55, 65, 81, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .slogan {
+            font-size: 3rem;
+            color: #C0C0C0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background-color: #2d3540;
+            border-radius: 8px;
+        }
+
+        .contact-section h2 {
+            color: #C0C0C0;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #C0C0C0;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #374151;
+            border: 2px solid #C0C0C0;
+            color: #C0C0C0;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(192, 192, 192, 0.3);
+        }
+
+        .pgp-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #2d3540;
+            border-left: 4px solid #C0C0C0;
+        }
+
+        .submit-btn {
+            background-color: #C0C0C0;
+            color: #374151;
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-
-    <!-- Top Bar (Kontakt & Sprache) -->
-    <div class="bg-[#2d3436] text-white text-[10px] py-2 px-12 flex justify-between uppercase tracking-[0.2em] font-medium">
-        <div>ceo@cats-consulting.eu | Intelligence & Defense</div>
-        <div class="flex gap-6">
-            <span class="cursor-pointer">DE</span>
-            <span class="opacity-40 cursor-pointer">EN</span>
+    <header>
+        <div class="header-content">
+            <div class="logo">⚙️ CATS Consulting</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <span>Expertise ▾</span>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#intelligence">Intelligence</a></li>
+                                <li><a href="#audits">Audits</a></li>
+                                <li><a href="#response">Response</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <!-- Main Navigation (Hypno-Style Struktur) -->
-    <nav class="bg-white py-8 px-12 flex justify-between items-center relative shadow-sm">
-        <div class="flex items-center gap-3">
-             <!-- Kleiner technischer Akzent vor dem Logo -->
-             <div class="w-8 h-8 bg-[#2d3436] rounded-sm flex items-center justify-center text-[10px] text-white font-bold">C</div>
-             <span class="text-2xl font-extrabold tracking-tighter text-[#2d3436]">C.A.T.S. <span class="font-light text-gray-400">CONSULTING</span></span>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="slogan">Ein harmloser Mann ist nicht friedlich, er ist harmlos.</h1>
         </div>
-        
-        <div class="hidden lg:flex gap-10 text-[12px] font-bold uppercase tracking-widest text-gray-500">
-            <a href="#" class="hover:text-black transition-colors">Willkommen</a>
-            
-            <div class="nav-item relative cursor-pointer hover:text-black flex items-center gap-1">
-                Anwendungsgebiete <span class="text-[8px]">▼</span>
-                <div class="dropdown">
-                    <a href="#" class="dropdown-link">📊 Cyber Analytics & Intelligence</a>
-                    <a href="#" class="dropdown-link">🕵️ Darknet Monitoring & Leaks</a>
-                    <a href="#" class="dropdown-link">🛡️ Tactical Security Solutions</a>
-                    <a href="#" class="dropdown-link">📝 Strategic Audit Reports</a>
-                </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Kontakt</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
             </div>
+            <div class="form-group">
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Betreff:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <button type="submit" class="submit-btn">Absenden</button>
+        </form>
 
-            <a href="#" class="hover:text-black transition-colors">Methode</a>
-            <a href="#" class="hover:text-black transition-colors">Über uns</a>
-            <a href="#" class="hover:text-black transition-colors">Kontakt</a>
-            
-            <div class="ml-4 cursor-pointer hover:scale-110 transition-transform">🔍</div>
+        <div class="pgp-info">
+            <h3>PGP-Verschlüsselung</h3>
+            <p><strong>Fingerprint:</strong> 0x4A7B9C2D1E8F6A5B</p>
+            <p><strong>Email:</strong> kontakt@cats-consulting.de</p>
         </div>
-    </nav>
-
-    <!-- Hero Banner (Großes atmosphärisches Bild) -->
-    <section class="hero-banner"></section>
-
-    <!-- Content Section (Zentriert wie im Beispiel) -->
-    <main class="max-w-5xl mx-auto py-24 px-8 text-center">
-        <div class="flex items-center justify-center gap-6 mb-12">
-            <div class="h-[1px] w-16 bg-gray-200"></div>
-            <h2 class="text-3xl font-light text-gray-800 tracking-[0.1em]">C.A.T.S. | Cyber Analytics & Tactical Solutions</h2>
-            <div class="h-[1px] w-16 bg-gray-200"></div>
-        </div>
-
-        <p class="text-2xl text-gray-700 leading-relaxed italic font-light max-w-3xl mx-auto mb-12">
-            &bdquo;Ein harmloser Mann ist nicht friedlich, er ist harmlos.&ldquo;
-        </p>
-        
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-loose font-light">
-            Strategische Analyse-Verfahren und taktische Sicherheits-Lösungen in Kombination mit 
-            Diskretion, Erfahrung und absoluter Präzision. Das ist die Philosophie von C.A.T.S.
-        </p>
-
-        <div class="mt-16">
-            <a href="mailto:ceo@cats-consulting.eu" class="inline-block px-10 py-4 bg-[#2d3436] text-white uppercase text-[11px] tracking-[0.3em] font-bold hover:bg-gray-800 transition-all shadow-lg">
-                Inquiry Security Portfolio
-            </a>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-50 py-16 px-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 uppercase tracking-[0.3em]">
-        <p>&copy; 2026 C.A.T.S. Strategic Defense Intelligence</p>
-        <div class="flex gap-8 mt-6 md:mt-0">
-            <a href="#" class="hover:text-black">Impressum</a>
-            <a href="#" class="hover:text-black">Datenschutz</a>
-        </div>
-    </footer>
-
+    </section>
 </body>
 </html>
