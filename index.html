@@ -1,130 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATS CONSULTING | Strategic Cyber Intelligence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>C.A.T.S. Consulting</title>
     <style>
-        .storm-gray { color: #4a5058; }
-        .bg-storm-dark { background-color: #2d3436; }
-        .text-silver { color: #c0c0c0; }
-        .border-silver { border-color: #c0c0c0; }
-        .silver-accent { color: #e3e3e3; }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #2d3436; 
+            color: #ecf0f1;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        
+        .main-header {
+            text-align: center;
+            padding: 40px;
+            max-width: 900px;
         }
-        @keyframes pulse-glow {
-            0%, 100% { 
-                stroke-width: 3;
-                opacity: 0.6;
-                filter: drop-shadow(0 0 2px rgba(192, 192, 192, 0.5));
-            }
-            50% {
-                stroke-width: 4;
-                opacity: 1;
-                filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.8)) drop-shadow(0 0 4px rgba(65, 105, 135, 0.6));
-            }
+
+        /* SVG & Animation Styling */
+        .logo-svg {
+            filter: drop-shadow(0 0 15px rgba(236, 240, 241, 0.1));
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
         }
-        .pulse-line {
-            animation: pulse-glow 3s ease-in-out infinite;
+
+        .logo-svg:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+
+        .philosophy-container {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(189, 195, 199, 0.2);
+            position: relative;
+        }
+
+        .philosophy-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #bdc3c7;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+            margin: 0;
         }
     </style>
 </head>
-<body class="dark bg-gray-800 text-white">
+<body>
 
-    <!-- Header mit C.A.T.S. Chip Logo -->
-    <header class="bg-storm-dark p-8 border-b-4 border-silver">
-        <div class="container mx-auto">
-            <!-- C.A.T.S. Chip Logo SVG - Nachbau von Vista Logos/colored-logo.pdf -->
-            <svg id="cats-chip-logo" width="350" height="220" viewBox="0 0 350 220" class="mx-auto">
-                <defs>
-                    <!-- Gebürstetes Silber Gradient für Chip & Linien -->
-                    <linearGradient id="brushed-silver" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#bdc3c7; stop-opacity:1"/>
-                        <stop offset="50%" style="stop-color:#ecf0f1; stop-opacity:1"/>
-                        <stop offset="100%" style="stop-color:#bdc3c7; stop-opacity:1"/>
-                    </linearGradient>
-                </defs>
-                
-                <!-- Chip-Form (Quadratisch mit Leiterbahnen) -->
-                <rect x="50" y="20" width="250" height="140" fill="#2d3436" stroke="url(#brushed-silver)" stroke-width="4" rx="10"/>
-                
-                <!-- Pulsierende Leiterbahnen -->
-                <g class="pulse-line">
-                    <path d="M 70,85 L 150,85 M 180,85 L 260,85" stroke="url(#brushed-silver)" stroke-width="3" fill="none"/>
-                    <path d="M 70,75 L 260,75 M 70,95 L 260,95" stroke="url(#brushed-silver)" stroke-width="2" fill="none"/>
-                </g>
-                
-                <!-- C.A.T.S. Text im Chip -->
-                <text x="175" y="85" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="42" fill="#ecf0f1" font-weight="bold">C.A.T.S.</text>
-                
-                <!-- Philosophie -->
-                <text x="175" y="130" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="12" fill="#c8d4df" style="font-style: italic;">Ein harmloser Mann ist nicht friedlich, er ist harmlos.</text>
-            </svg>
-        </div>
-    </header>
+<header class="main-header">
+    <!-- SVG-Logo Nachbau: Gebürstetes Silber auf Sturmgrau -->
+    <svg class="logo-svg" width="220" height="220" viewBox="0 0 200 200" xmlns="http://w3.org">
+        <defs>
+            <!-- Metallic Brushed Silver Gradient -->
+            <linearGradient id="silverReflex" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#bdc3c7;stop-opacity:1" />
+                <stop offset="25%" style="stop-color:#ecf0f1;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#bdc3c7;stop-opacity:1" />
+                <stop offset="75%" style="stop-color:#ffffff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#bdc3c7;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        
+        <!-- Leiterbahnen mit Kontaktpunkten -->
+        <g stroke="url(#silverReflex)" stroke-width="2.5" fill="none">
+            <path d="M100 0 V45 M80 5 V45 M120 5 V45" />
+            <path d="M100 155 V200 M80 155 V195 M120 155 V195" />
+            <path d="M0 100 H45 M5 80 H45 M5 120 H45" />
+            <path d="M155 100 H200 M155 80 H195 M155 120 H195" />
+            <!-- Endpunkte (Dots) -->
+            <circle cx="100" cy="5" r="2.5" fill="url(#silverReflex)" />
+            <circle cx="5" cy="100" r="2.5" fill="url(#silverReflex)" />
+            <circle cx="195" cy="100" r="2.5" fill="url(#silverReflex)" />
+        </g>
+        
+        <!-- Haupt-Chip -->
+        <rect x="45" y="45" width="110" height="110" rx="14" fill="url(#silverReflex)" />
+        
+        <!-- Branding im Chip -->
+        <text x="100" y="108" text-anchor="middle" font-weight="900" font-size="24" fill="#2d3436" style="letter-spacing: 1px;">C.A.T.S.</text>
+    </svg>
 
-    <!-- Location -->
-    <section class="container mx-auto px-8 py-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-lg border-l-4 border-silver">
-            <h2 class="text-2xl font-semibold mb-4 silver-accent">Location</h2>
-            <p class="text-silver">Tallinn, Estonia</p>
-        </div>
-    </section>
-
-    <!-- Focus Areas -->
-    <section class="container mx-auto px-8 py-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-4 border-l-4 border-silver hover-lift">
-            <h2 class="text-2xl font-semibold mb-4 silver-accent">Our Focus</h2>
-            <ul class="list-disc list-inside text-silver space-y-3">
-                <li><strong>Forensic Audits:</strong> Wir führen tiefgehende Analysen Ihrer digitalen Assets und Sicherheitsprotokolle durch. Unsere Experten untersuchen jede Schwachstelle mit der Präzision eines Detektivs, um sicherzustellen, dass Ihre kritischen Systeme nicht nur funktionieren, sondern auch widerstandsfähig gegen Bedrohungen sind.</li>
-                <li><strong>Darknet Monitoring:</strong> Kontinuierliche Überwachung und Analyse von Bedrohungen in Echtzeit. Wir beobachten die digitalen Schatten, wo sich Gefahren verstecken könnten, und warnen Sie proaktiv vor potenziellen Risiken, bevor sie zu Problemen werden.</li>
-                <li><strong>Incident Response:</strong> Unsere Rapid Deployment Teams stehen bereit für kritische Situationen. Bei Bedarf mobilisieren wir sofort unsere besten Experten, um Bedrohungen schnell zu identifizieren und zu neutralisieren – denn in der Sicherheitsbranche zählt jede Minute.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Current Intelligence Advisories -->
-    <section class="container mx-auto px-8 py-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-4 border-l-4 border-silver">
-            <h2 class="text-2xl font-semibold mb-4 silver-accent">Current Intelligence Advisories (Restricted Access)</h2>
-            <div class="border-l-4 border-silver pl-4 py-2">
-                <p class="font-bold text-xl">Case #2026-ALPHA-01</p>
-                <p class="text-silver mt-2">Critical Infrastructure Exposure identified in the EU Tech Sector.</p>
-                <p class="silver-accent font-bold">Risk Score: 9.2/10</p>
-                <p class="mt-2 text-silver"><strong>Status:</strong> Active Investigation / Client Mitigation in Progress.</p>
-            </div>
-            <p class="text-silver mt-4 italic">Full tactical reports are only available for verified stakeholders via encrypted channels.</p>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="container mx-auto px-8 py-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-lg border-l-4 border-silver hover-lift">
-            <h2 class="text-2xl font-semibold mb-4 silver-accent">Contact</h2>
-            <p class="text-silver">Email: ceo@catsconsulting.eu</p>
-            <p class="mt-2 text-silver"><strong>PGP-Verschlüsselung:</strong> Available for secure communications.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-storm-dark p-4 mt-8 border-t-4 border-silver">
-        <p class="text-center text-silver">&copy; 2026 CATS CONSULTING. All rights reserved.</p>
-    </footer>
-
-    <!-- Call to Action -->
-    <section class="container mx-auto px-8 py-6 mt-4">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-lg border-l-4 border-silver text-center">
-            <h2 class="text-2xl font-semibold mb-4 silver-accent">Sichern Sie Ihre Zukunft</h2>
-            <p class="text-silver mb-4">Lassen Sie uns gemeinsam die Bedrohungen identifizieren, bevor sie zu Problemen werden.</p>
-            <button class="bg-storm-dark text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-700 transition duration-300" style="font-weight: bold;">Jetzt kontaktieren</button>
-        </div>
-    </section>
+    <div class="philosophy-container">
+        <p class="philosophy-quote">
+            &bdquo;Ein harmloser Mann ist nicht friedlich, er ist harmlos.&ldquo;
+        </p>
+    </div>
+</header>
 
 </body>
 </html>
